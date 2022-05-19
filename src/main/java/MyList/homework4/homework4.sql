@@ -94,7 +94,7 @@ with Tab1 as (
          where t2.starttime > (t1.starttime + t1.duration + interval '00:30:00')
          group by t1.starttime
      )
-select distinct t1.title, t1.starttime, t1.duration, t2.starttime as nachalo_2, t3.break as breack
+select distinct t1.title, t1.starttime, t1.duration, t2.starttime as nachalo_2, t3.break as break
 from
     Tab1 t1, Tab2 t2, Tab3 t3
 where (t2.starttime - (t1.starttime + t1.duration)) = t3.break
